@@ -7,21 +7,34 @@
 import SwiftUI
 import PeerToPeerConnection
 import ChatLibrary
+import Combine
 
 struct MainView: View {
-    var chatManager: ChatControllerManager = .init()
+    @State
+    var chatManager = ChatControllerManager()
     
     var body: some View {
-        ChatContainerView<ChatControllerManager, ConnectionView> {
-            ConnectionView()
-            
+        ChatContainerView<ChatControllerManager, PeerConnectionView> {
+            PeerConnectionView()
         }
-        .alert("Alert", isPresented: chatManager., presenting: <#T##T?#>, actions: <#T##(T) -> View#>)
         .environment(chatManager)
+        .alert(chatManager.chatAlert?.alertTitle ?? "Alert",
+               isPresented: $chatManager.showAlert,
+               presenting: chatManager.chatAlert)
+        { newAlert in
+            ForEach(newAlert.actions) { alertAction in
+                Button(alertAction.title,
+                       role: alertAction.buttonRole,
+                       action: alertAction.action)
+            }
+        } message: { newAlert in
+            Text(newAlert.alertBodyMessage)
+        }
+        
     }
 }
 
-struct ConnectionView: View {
+struct PeerConnectionView: View {
     @Environment(ChatControllerManager.self)
     var chatManager
     
@@ -54,7 +67,7 @@ struct ConnectionView: View {
     }
 }
 
-extension ConnectionView {
+extension PeerConnectionView {
     var advertisingButton: some View {
         Button {
             chatManager.connectionManager.isAdvertising.toggle()
@@ -95,3 +108,5 @@ extension ConnectionView {
 #Preview {
     MainView()
 }
+
+
