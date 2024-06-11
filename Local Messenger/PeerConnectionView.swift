@@ -9,30 +9,7 @@ import PeerToPeerConnection
 import ChatLibrary
 import Combine
 
-struct MainView: View {
-    @State
-    var chatManager = ChatControllerManager()
-    
-    var body: some View {
-        ChatContainerView<ChatControllerManager, PeerConnectionView> {
-            PeerConnectionView()
-        }
-        .environment(chatManager)
-        .alert(chatManager.chatAlert?.alertTitle ?? "Alert",
-               isPresented: $chatManager.showAlert,
-               presenting: chatManager.chatAlert)
-        { newAlert in
-            ForEach(newAlert.actions) { alertAction in
-                Button(alertAction.title,
-                       role: alertAction.buttonRole,
-                       action: alertAction.action)
-            }
-        } message: { newAlert in
-            Text(newAlert.alertBodyMessage)
-        }
-        
-    }
-}
+
 
 struct PeerConnectionView: View {
     @Environment(ChatControllerManager.self)
@@ -75,7 +52,7 @@ extension PeerConnectionView {
             Label(
                 title: {
                     Text(chatManager.connectionManager.isAdvertising ?
-                          "Stop Advertising Session": "Advertise Session")
+                          "Stop Advertising Session": "Start Advertising Session")
                 }, icon: {
                     Image(
                         systemName: chatManager.connectionManager.isAdvertising ? "antenna.radiowaves.left.and.right.slash" : "antenna.radiowaves.left.and.right"
@@ -106,7 +83,7 @@ extension PeerConnectionView {
 
 
 #Preview {
-    MainView()
+    MainChatView()
 }
 
 

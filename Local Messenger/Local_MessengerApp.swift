@@ -12,7 +12,7 @@ import SwiftUI
 struct Local_MessengerApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainChatView()
         }
     }
 }
