@@ -74,5 +74,32 @@ final class ChatControllerManager: ChatController {
     }
 
     override func start() {
+        connectionManager
+            .dataReceiverPublisher
+            .receive(on: DispatchQueue.main)
+            .map { (data: Data, peer: MCPeerID) -> (content: String?, peerName: String) in
+                let content = String(data: data, encoding: .utf8)
+                let peerName = peer.displayName
+                return (content: content, peerName: peerName)
+            }
+            .map { ChatRemoteMessage($0.content ?? "??", identifier: $0.peerName) }
+            .sink { [weak self] receivedMessage in
+                guard let self else { return }
+                self.messages.append(receivedMessage)
+            }
+            .store(in: &cancelable)
+    }
+
+    override func sendMessage(message: String) async {
+        await super.sendMessage(message: message)
+        connectionManager.sendData(message)
+    }
+
+    override func userTappedSubmit(params: String...) {
+        chatStatus = .chatting
+    }
+
+    override func end() {
+//        cancelable.removeAll()
     }
 }
