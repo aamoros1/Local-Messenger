@@ -83,7 +83,9 @@ extension PeerConnectionView {
 
 
 #Preview {
-    MainChatView()
+    NavigationStack {
+        MainChatView()
+    }
 }
 
 

@@ -16,7 +16,7 @@
 		838FCF282C0E1F4200BC720A /* Local_MessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838FCF272C0E1F4200BC720A /* Local_MessengerUITests.swift */; };
 		838FCF2A2C0E1F4200BC720A /* Local_MessengerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838FCF292C0E1F4200BC720A /* Local_MessengerUITestsLaunchTests.swift */; };
 		838FCF382C0E24DF00BC720A /* PeerToPeerConnection in Frameworks */ = {isa = PBXBuildFile; productRef = 838FCF372C0E24DF00BC720A /* PeerToPeerConnection */; };
-		838FCF3B2C0FACC700BC720A /* ChatLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 838FCF3A2C0FACC700BC720A /* ChatLibrary */; };
+		838FCF3B2C0FACC700BC720A /* ChatLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 838FCF3A2C0FACC700BC720A /* ChatLibrary */; settings = {ATTRIBUTES = (Required, ); }; };
 		838FCF3D2C0FFCD200BC720A /* ChatControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838FCF3C2C0FFCD200BC720A /* ChatControllerManager.swift */; };
 /* End PBXBuildFile section */
 

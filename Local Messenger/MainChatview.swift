@@ -14,7 +14,7 @@ struct MainChatView: View {
     var chatManager = ChatControllerManager()
     
     var body: some View {
-        ChatContainerView<ChatControllerManager, PeerConnectionView> {
+        ChatContainerView<ChatControllerManager, PeerConnectionView>(chatController: chatManager) {
             PeerConnectionView()
         }
         .environment(chatManager)

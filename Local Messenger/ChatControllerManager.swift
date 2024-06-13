@@ -74,6 +74,7 @@ final class ChatControllerManager: ChatController {
     }
 
     override func start() {
+        print(#function)
         connectionManager
             .dataReceiverPublisher
             .receive(on: DispatchQueue.main)
@@ -101,5 +102,6 @@ final class ChatControllerManager: ChatController {
 
     override func end() {
 //        cancelable.removeAll()
+        print(#function)
     }
 }
