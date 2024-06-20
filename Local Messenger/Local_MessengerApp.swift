@@ -2,9 +2,7 @@
 // Local_MessengerApp.swift
 // 
 // 
-// 
-
-	
+//
 
 import SwiftUI
 
@@ -14,14 +12,7 @@ struct Local_MessengerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $path) {
-                Button("Start Chaitting") {
-                    path.append("a")
-                }
-                .navigationDestination(for: String.self) { _ in
-                    MainChatView()
-                }
-            }
+            MenuScreen()
         }
     }
 }

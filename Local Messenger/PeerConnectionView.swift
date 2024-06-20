@@ -4,12 +4,10 @@
 // 
 
 
-import SwiftUI
-import PeerToPeerConnection
-import ChatLibrary
 import Combine
-
-
+import SwiftUI
+import ChatLibrary
+import PeerToPeerConnection
 
 struct PeerConnectionView: View {
     @Environment(ChatControllerManager.self)
@@ -17,7 +15,7 @@ struct PeerConnectionView: View {
     
     var body: some View {
         List {
-            Section("Found Peers") {
+            Section("FOUND_PEERS") {
                 ForEach(chatManager.connectionManager.foundPeers, id: \.displayName) { peer in
                     Button {
                         chatManager.connectionManager.invitePeer(with: peer, withContext: "")
@@ -26,7 +24,7 @@ struct PeerConnectionView: View {
                     }
                 }
             }
-            Section("Connected Peers") {
+            Section("CONNECTED_PEERS") {
                 ForEach(chatManager.connectionManager.connectedPeers, id: \.peerID) {
                     Text($0.peerID.displayName)}
             }
@@ -79,13 +77,3 @@ extension PeerConnectionView {
         }
     }
 }
-
-
-
-#Preview {
-    NavigationStack {
-        MainChatView()
-    }
-}
-
-
