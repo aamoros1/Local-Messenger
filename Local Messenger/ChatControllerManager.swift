@@ -74,7 +74,6 @@ final class ChatControllerManager: ChatController {
     }
 
     override func start() {
-        print(#function)
         connectionManager
             .dataReceiverPublisher
             .receive(on: DispatchQueue.main)
@@ -83,10 +82,10 @@ final class ChatControllerManager: ChatController {
                 let peerName = peer.displayName
                 return (content: content, peerName: peerName)
             }
-            .map { ChatRemoteMessage($0.content ?? "??", identifier: $0.peerName) }
-            .sink { [weak self] receivedMessage in
+            .map { [ChatRemoteMessage($0.content ?? "??", identifier: $0.peerName)] }
+            .sink { [weak self] messages in
                 guard let self else { return }
-                self.messages.append(receivedMessage)
+                self.messages += messages
             }
             .store(in: &cancelable)
     }
@@ -101,7 +100,6 @@ final class ChatControllerManager: ChatController {
     }
 
     override func end() {
-//        cancelable.removeAll()
-        print(#function)
+        cancelable.removeAll()
     }
 }

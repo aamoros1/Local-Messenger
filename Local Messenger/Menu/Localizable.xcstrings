@@ -1,0 +1,53 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "+" : {
+
+    },
+    "CONNECTED_PEERS" : {
+
+    },
+    "FOUND_PEERS" : {
+
+    },
+    "implement me" : {
+
+    },
+    "Key" : {
+      "extractionState" : "manual"
+    },
+    "SETTINGS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "Start Advertising Session" : {
+
+    },
+    "Start Scanning" : {
+
+    },
+    "START_CHATTING" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start Chatting"
+          }
+        }
+      }
+    },
+    "Stop Advertising Session" : {
+
+    },
+    "Stop Scanning" : {
+
+    }
+  },
+  "version" : "1.0"
+}

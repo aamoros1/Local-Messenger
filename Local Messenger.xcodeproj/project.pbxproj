@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		832B1E8D2C18E44900906A3A /* MainChatview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832B1E8C2C18E44900906A3A /* MainChatview.swift */; };
+		832B1E942C1B20B500906A3A /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832B1E932C1B20B500906A3A /* MenuScreen.swift */; };
+		832B1E962C1B29A000906A3A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 832B1E952C1B29A000906A3A /* Localizable.xcstrings */; };
 		838FCF0D2C0E1F4100BC720A /* Local_MessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838FCF0C2C0E1F4100BC720A /* Local_MessengerApp.swift */; };
 		838FCF0F2C0E1F4100BC720A /* PeerConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838FCF0E2C0E1F4100BC720A /* PeerConnectionView.swift */; };
 		838FCF112C0E1F4200BC720A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 838FCF102C0E1F4200BC720A /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		832B1E8C2C18E44900906A3A /* MainChatview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainChatview.swift; sourceTree = "<group>"; };
+		832B1E932C1B20B500906A3A /* MenuScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreen.swift; sourceTree = "<group>"; };
+		832B1E952C1B29A000906A3A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		838FCF092C0E1F4100BC720A /* Local Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Local Messenger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		838FCF0C2C0E1F4100BC720A /* Local_MessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local_MessengerApp.swift; sourceTree = "<group>"; };
 		838FCF0E2C0E1F4100BC720A /* PeerConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerConnectionView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		832B1E922C1B202E00906A3A /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				832B1E932C1B20B500906A3A /* MenuScreen.swift */,
+				832B1E952C1B29A000906A3A /* Localizable.xcstrings */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		838FCF002C0E1F4100BC720A = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 		838FCF0B2C0E1F4100BC720A /* Local Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				832B1E922C1B202E00906A3A /* Menu */,
 				838FCF3E2C10DA7400BC720A /* Local-Messenger-Info.plist */,
 				838FCF0C2C0E1F4100BC720A /* Local_MessengerApp.swift */,
 				838FCF0E2C0E1F4100BC720A /* PeerConnectionView.swift */,
@@ -253,6 +267,7 @@
 			files = (
 				838FCF142C0E1F4200BC720A /* Preview Assets.xcassets in Resources */,
 				838FCF112C0E1F4200BC720A /* Assets.xcassets in Resources */,
+				832B1E962C1B29A000906A3A /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				832B1E942C1B20B500906A3A /* MenuScreen.swift in Sources */,
 				838FCF0F2C0E1F4100BC720A /* PeerConnectionView.swift in Sources */,
 				832B1E8D2C18E44900906A3A /* MainChatview.swift in Sources */,
 				838FCF3D2C0FFCD200BC720A /* ChatControllerManager.swift in Sources */,
